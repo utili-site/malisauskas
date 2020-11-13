@@ -45,11 +45,19 @@ collections:
                   required: false,
                 },
                 {
-                  label: Tags,
-                  name: tags,
+                  label: Blocks,
+                  name: blocks,
                   widget: list,
-                  required: false,
-                  field: { label: Tag, name: tag, widget: string },
+                  field:
+                    {
+                      label: Block,
+                      name: block,
+                      widget: relation,
+                      required: false,
+                      collection: portfolio,
+                      value_field: title,
+                      search_fields: ["title", "body"],
+                    },
                 },
               ],
           },
@@ -99,7 +107,7 @@ collections:
     {
       name: portfolio,
       label: Portfolio,
-      folder: "content/portfolio",
+      folder: "content/works",
       create: true,
       slug: "{{slug}}",
       fields:
@@ -132,20 +140,6 @@ collections:
             widget: list,
             field: { label: Tag, name: tag, widget: string },
           },
-        ],
-    },
-    {
-      name: clients,
-      label: Clients,
-      folder: "content/clients",
-      create: true,
-      slug: "{{slug}}",
-      fields:
-        [
-          { label: Title, name: title, widget: string },
-          { label: Logo, name: logo, widget: image },
-          { label: Body, name: body, widget: "text" },
-          { label: URL, name: url, widget: string },
         ],
     },
   ]

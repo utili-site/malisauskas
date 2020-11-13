@@ -1,19 +1,36 @@
 backend:
   name: github
   repo: utili-site/malisauskas
-  branch: master
+  branch: main
 
-media_folder: 'static/uploads'
-public_folder: '/uploads'
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: 'posts'
-    label: 'Posts'
-    folder: 'posts'
+  - name: "clients"
+    label: "Clients"
+    folder: "clients"
     create: true
-    slug: '{{slug}}'
+    slug: "{{slug}}"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'date' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "text" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "URL", name: "url", widget: "string" }
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Featured Image", name: "featured", widget: "image" }
+      - { label: "More URL", name: "url", widget: "string" }
+      - { label: "More label", name: "more", widget: "string" }
+      - { label: "Tags",
+          name: "tags",
+          widget: "list",
+          field: { label: "Tag", name: "tag", widget: "string" }
+        }

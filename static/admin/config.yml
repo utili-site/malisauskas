@@ -37,7 +37,13 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
-                { label: Body, name: body, widget: markdown, required: false },
+                {
+                  label: Body,
+                  name: body,
+                  minimal: true,
+                  widget: markdown,
+                  required: false,
+                },
                 {
                   label: Tags,
                   name: tags,
@@ -54,7 +60,7 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
-                { label: Body, name: body, widget: markdown },
+                { label: Body, name: body, minimal: true, widget: markdown },
                 { label: "Thumbnail Image", name: thumbnail, widget: image },
                 { label: "Featured Image", name: featured, widget: image },
                 { label: "More URL", name: url, widget: string },
@@ -74,7 +80,7 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
-                { label: Body, name: body, widget: markdown },
+                { label: Body, name: body, minimal: true, widget: markdown },
                 {
                   label: Clients,
                   name: items,
@@ -99,7 +105,13 @@ collections:
       fields:
         [
           { label: Title, name: title, widget: string },
-          { label: Body, name: body, widget: markdown, required: false },
+          {
+            label: Body,
+            name: body,
+            minimal: true,
+            widget: markdown,
+            required: false,
+          },
           {
             label: "Thumbnail Image",
             name: thumbnail,

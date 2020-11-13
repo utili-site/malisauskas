@@ -20,18 +20,14 @@ collections:
             file: "content/home.md",
             fields:
               [
-                { label: Title, name: title, widget: string },
-                { label: Body, name: body, widget: markdown },
-                { label: "Thumbnail Image", name: thumbnail, widget: image },
-                { label: "Featured Image", name: featured, widget: image },
-                { label: "More URL", name: url, widget: string },
-                { label: "More label", name: more, widget: string },
+                { label: "Hero Prefix", name: hero_prefix, widget: string },
                 {
-                  label: Tags,
-                  name: tags,
+                  label: "Hero Variants",
+                  name: hero_variants,
                   widget: list,
-                  field: { label: Tag, name: tag, widget: string },
+                  field: { label: Variant, name: variant, widget: string },
                 },
+                { label: "Hero Suffix", name: hero_suffix, widget: string },
               ],
           },
           {
@@ -41,15 +37,12 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
-                { label: Body, name: body, widget: markdown },
-                { label: "Thumbnail Image", name: thumbnail, widget: image },
-                { label: "Featured Image", name: featured, widget: image },
-                { label: "More URL", name: url, widget: string },
-                { label: "More label", name: more, widget: string },
+                { label: Body, name: body, widget: markdown, required: false },
                 {
                   label: Tags,
                   name: tags,
                   widget: list,
+                  required: false,
                   field: { label: Tag, name: tag, widget: string },
                 },
               ],
@@ -82,15 +75,16 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, widget: markdown },
-                { label: "Thumbnail Image", name: thumbnail, widget: image },
-                { label: "Featured Image", name: featured, widget: image },
-                { label: "More URL", name: url, widget: string },
-                { label: "More label", name: more, widget: string },
                 {
-                  label: Tags,
-                  name: tags,
+                  label: Clients,
+                  name: items,
                   widget: list,
-                  field: { label: Tag, name: tag, widget: string },
+                  fields:
+                    [
+                      { label: Logo, name: logo, widget: image },
+                      { label: Body, name: body, widget: "text" },
+                      { label: URL, name: url, widget: string },
+                    ],
                 },
               ],
           },
@@ -99,17 +93,27 @@ collections:
     {
       name: portfolio,
       label: Portfolio,
-      folder: portfolio,
+      folder: "conent/portfolio",
       create: true,
       slug: "{{slug}}",
       fields:
         [
           { label: Title, name: title, widget: string },
-          { label: Body, name: body, widget: markdown },
-          { label: "Thumbnail Image", name: thumbnail, widget: image },
-          { label: "Featured Image", name: featured, widget: image },
-          { label: "More URL", name: url, widget: string },
-          { label: "More label", name: more, widget: string },
+          { label: Body, name: body, widget: markdown, required: false },
+          {
+            label: "Thumbnail Image",
+            name: thumbnail,
+            widget: image,
+            required: false,
+          },
+          {
+            label: "Featured Image",
+            name: featured,
+            widget: image,
+            required: false,
+          },
+          { label: "More URL", name: url, widget: string, required: false },
+          { label: "More label", name: more, widget: string, required: false },
           {
             label: Tags,
             name: tags,

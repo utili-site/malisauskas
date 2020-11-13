@@ -93,7 +93,7 @@ collections:
     {
       name: portfolio,
       label: Portfolio,
-      folder: "conent/portfolio",
+      folder: "content/portfolio",
       create: true,
       slug: "{{slug}}",
       fields:
@@ -125,7 +125,7 @@ collections:
     {
       name: clients,
       label: Clients,
-      folder: clients,
+      folder: "content/clients",
       create: true,
       slug: "{{slug}}",
       fields:

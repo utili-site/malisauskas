@@ -3,23 +3,97 @@ backend:
   repo: utili-site/malisauskas
   branch: main
 
-media_folder: 'static/images/uploads'
-public_folder: '/images/uploads'
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   [
     {
-      name: clients,
-      label: Clients,
-      folder: clients,
+      name: pages,
+      label: Pages,
       create: true,
-      slug: '{{slug}}',
-      fields:
+      files:
         [
-          { label: Title, name: title, widget: string },
-          { label: Logo, name: logo, widget: image },
-          { label: Body, name: body, widget: 'text' },
-          { label: URL, name: url, widget: string },
+          {
+            label: Home,
+            name: home,
+            file: "content/home.md",
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Body, name: body, widget: markdown },
+                { label: "Thumbnail Image", name: thumbnail, widget: image },
+                { label: "Featured Image", name: featured, widget: image },
+                { label: "More URL", name: url, widget: string },
+                { label: "More label", name: more, widget: string },
+                {
+                  label: Tags,
+                  name: tags,
+                  widget: list,
+                  field: { label: Tag, name: tag, widget: string },
+                },
+              ],
+          },
+          {
+            label: Porfolio,
+            name: portfolio,
+            file: "content/portfolio.md",
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Body, name: body, widget: markdown },
+                { label: "Thumbnail Image", name: thumbnail, widget: image },
+                { label: "Featured Image", name: featured, widget: image },
+                { label: "More URL", name: url, widget: string },
+                { label: "More label", name: more, widget: string },
+                {
+                  label: Tags,
+                  name: tags,
+                  widget: list,
+                  field: { label: Tag, name: tag, widget: string },
+                },
+              ],
+          },
+          {
+            label: Services,
+            name: servies,
+            file: "content/services.md",
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Body, name: body, widget: markdown },
+                { label: "Thumbnail Image", name: thumbnail, widget: image },
+                { label: "Featured Image", name: featured, widget: image },
+                { label: "More URL", name: url, widget: string },
+                { label: "More label", name: more, widget: string },
+                {
+                  label: Tags,
+                  name: tags,
+                  widget: list,
+                  field: { label: Tag, name: tag, widget: string },
+                },
+              ],
+          },
+          {
+            label: Clients,
+            name: clients,
+            file: "content/clients.md",
+            fields:
+              [
+                { label: Title, name: title, widget: string },
+                { label: Body, name: body, widget: markdown },
+                { label: "Thumbnail Image", name: thumbnail, widget: image },
+                { label: "Featured Image", name: featured, widget: image },
+                { label: "More URL", name: url, widget: string },
+                { label: "More label", name: more, widget: string },
+                {
+                  label: Tags,
+                  name: tags,
+                  widget: list,
+                  field: { label: Tag, name: tag, widget: string },
+                },
+              ],
+          },
         ],
     },
     {
@@ -27,21 +101,35 @@ collections:
       label: Portfolio,
       folder: portfolio,
       create: true,
-      slug: '{{slug}}',
+      slug: "{{slug}}",
       fields:
         [
           { label: Title, name: title, widget: string },
           { label: Body, name: body, widget: markdown },
-          { label: 'Thumbnail Image', name: thumbnail, widget: image },
-          { label: 'Featured Image', name: featured, widget: image },
-          { label: 'More URL', name: url, widget: string },
-          { label: 'More label', name: more, widget: string },
+          { label: "Thumbnail Image", name: thumbnail, widget: image },
+          { label: "Featured Image", name: featured, widget: image },
+          { label: "More URL", name: url, widget: string },
+          { label: "More label", name: more, widget: string },
           {
             label: Tags,
             name: tags,
             widget: list,
             field: { label: Tag, name: tag, widget: string },
           },
+        ],
+    },
+    {
+      name: clients,
+      label: Clients,
+      folder: clients,
+      create: true,
+      slug: "{{slug}}",
+      fields:
+        [
+          { label: Title, name: title, widget: string },
+          { label: Logo, name: logo, widget: image },
+          { label: Body, name: body, widget: "text" },
+          { label: URL, name: url, widget: string },
         ],
     },
   ]

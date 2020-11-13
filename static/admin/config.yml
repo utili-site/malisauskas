@@ -3,34 +3,45 @@ backend:
   repo: utili-site/malisauskas
   branch: main
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: 'static/images/uploads'
+public_folder: '/images/uploads'
 
 collections:
-  - name: "clients"
-    label: "Clients"
-    folder: "clients"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "text" }
-      - { label: "Logo", name: "logo", widget: "image" }
-      - { label: "URL", name: "url", widget: "string" }
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "portfolio"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
-      - { label: "Featured Image", name: "featured", widget: "image" }
-      - { label: "More URL", name: "url", widget: "string" }
-      - { label: "More label", name: "more", widget: "string" }
-      - { label: "Tags",
-          name: "tags",
-          widget: "list",
-          field: { label: "Tag", name: "tag", widget: "string" }
-        }
+  [
+    {
+      name: clients,
+      label: Clients,
+      folder: clients,
+      create: true,
+      slug: '{{slug}}',
+      fields:
+        [
+          { label: Title, name: title, widget: string },
+          { label: Logo, name: logo, widget: image },
+          { label: Body, name: body, widget: 'text' },
+          { label: URL, name: url, widget: string },
+        ],
+    },
+    {
+      name: portfolio,
+      label: Portfolio,
+      folder: portfolio,
+      create: true,
+      slug: '{{slug}}',
+      fields:
+        [
+          { label: Title, name: title, widget: string },
+          { label: Body, name: body, widget: markdown },
+          { label: 'Thumbnail Image', name: thumbnail, widget: image },
+          { label: 'Featured Image', name: featured, widget: image },
+          { label: 'More URL', name: url, widget: string },
+          { label: 'More label', name: more, widget: string },
+          {
+            label: Tags,
+            name: tags,
+            widget: list,
+            field: { label: Tag, name: tag, widget: string },
+          },
+        ],
+    },
+  ]

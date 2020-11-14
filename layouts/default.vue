@@ -1,20 +1,21 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="app">
+    <div class="app__transitions transitions"></div>
+    <Nuxt :class="['app__page', `app__page--${$nuxt.$route.name}`]" keep-alive />
+    <div class="app__sidebar sidebar"></div>
+    <div class="app__portal portal"></div>
   </div>
 </template>
 
+<script>
+export default {
+};
+</script>
+
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

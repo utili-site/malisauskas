@@ -1,15 +1,36 @@
 <template>
-  <div class="container"></div>
+  <div class="page page--portfolio">
+    <div class="page__container container">
+      <div class="page__intro intro">
+        <div class="intro__slug" v-text="slug" />
+        <h1 class="intro__slug" v-text="title" />
+        <nuxt-content class="intro__text" :document="document" />
+      </div>
+      <div class="page__portfolio portfolio">
+        <div class="portfolio__grid">
+          <div class="portfolio__block" v-for="({ slug, thumbnail, ...work }, index) in portfolio" :key="slug">
+            <div class="portfolio__work">
+              <!-- <nuxt-picture class="portfolio__thumbnail" sizes="300 (webp),300:600 (jpeg),600:900" :src="thumbnail" /> -->
+              <img class="portfolio__thumbnail" :src="thumbnail" />
+              {{ (work, index) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $content }) {
-    const portfolio = await $content("portfolio").fetch();
-    const works = await $content("works").fetch();
-    console.log('index', { portfolio, works });
+    const document = await $content("portfolio").fetch();
+    const { slug, title, blocks } = document;
 
-    return { portfolio };
+    const works = await $content("works").fetch();
+    const portfolio = blocks.map((block) => works.find(({ title }) => title === block));
+
+    return { slug, title, portfolio, document };
   },
 };
 </script>
@@ -17,32 +38,5 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

@@ -132,7 +132,7 @@ collections:
                   label: Navigation,
                   name: nav,
                   widget: list,
-                  summary: "{{block}}",
+                  summary: "{{fields.label}}",
                   fields:
                     [
                       { label: Label, name: label, widget: string },
@@ -144,6 +144,27 @@ collections:
                         value_field: title,
                         search_fields: ["title", "body"],
                       },
+                    ],
+                },
+              ],
+          },
+          {
+            label: Footer,
+            name: footer,
+            file: "content/ui/footer.md",
+            fields:
+              [
+                { label: Footnote, name: footnote, widget: string, required: false },
+                {
+                  label: "Social links",
+                  name: socials,
+                  widget: list,
+                  summary: "{{fields.label}}",
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      { label: Icon, name: icon, widget: image },
                     ],
                 },
               ],

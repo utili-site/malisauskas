@@ -94,8 +94,6 @@ export default {
     align-items: center;
     padding: 0 2.1rem;
   }
-  &__talk {
-  }
 }
 .contacts {
   font-size: 1.4rem;

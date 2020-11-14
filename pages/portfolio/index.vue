@@ -8,7 +8,8 @@
             <div class="portfolio__work">
               <!-- <nuxt-picture class="portfolio__thumbnail" sizes="300 (webp),300:600 (jpeg),600:900" :src="thumbnail" /> -->
               <img class="portfolio__thumbnail" :src="thumbnail" />
-              <NuxtLink class="portfolio__link" :to="`${slug}/${work.slug}`">{{ title }}</NuxtLink>
+              <NuxtLink class="portfolio__link" :to="`${slug}/${work.slug}`" v-text="title" />
+              <!-- <NuxtLink class="portfolio__link" :to="work.slug" v-text="title" /> -->
               {{ (work, index) }}
             </div>
           </div>

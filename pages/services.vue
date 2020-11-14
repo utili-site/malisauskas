@@ -28,5 +28,11 @@ export default {
 
     return { slug, title, document, services: document.items };
   },
+  mounted() {
+    this.$emit("set-blobs-colors", {
+      leftBlobColor: document.leftBlobColor,
+      rightBlobColor: document.rightBlobColor,
+    });
+  },
 };
 </script>

@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss">
 .intro {
-  padding: 15.5rem 0 13.2rem;
+  padding: 15.5rem 0 2.6rem;
   &__slug {
     color: #555;
     font-size: 1.4rem;

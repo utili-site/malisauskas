@@ -24,7 +24,7 @@ export default {
   components: {
     PageIntro,
   },
-  async asyncData({ $content }) {
+  async asyncData({ $content, app }) {
     const document = await $content("clients").fetch();
     const { slug, title, blocks } = document;
 
@@ -39,7 +39,7 @@ export default {
     grid-gap: 0 3rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    padding: 2.5rem 0;
+    padding: 8.1rem 0;
   }
   &__block {
     padding: 2.5rem 0;

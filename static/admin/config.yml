@@ -21,6 +21,8 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
+                { label: 'Left Color', name: leftBlobColor, widget: color },
+                { label: 'Right Color', name: rightBlobColor, widget: color },
                 { label: "Hero Prefix", name: hero_prefix, widget: string },
                 {
                   label: "Hero Variants",
@@ -39,6 +41,8 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, minimal: true, widget: markdown, required: false },
+                { label: 'Left Color', name: leftBlobColor, widget: color },
+                { label: 'Right Color', name: rightBlobColor, widget: color },
                 {
                   label: Blocks,
                   name: blocks,
@@ -65,6 +69,8 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, minimal: true, widget: markdown },
+                { label: 'Left Color', name: leftBlobColor, widget: color },
+                { label: 'Right Color', name: rightBlobColor, widget: color },
                 { label: "Thumbnail Image", name: thumbnail, widget: image },
                 { label: "Featured Image", name: featured, widget: image },
                 { label: "More URL", name: url, widget: string },
@@ -80,6 +86,8 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, minimal: true, widget: markdown },
+                { label: 'Left Color', name: leftBlobColor, widget: color },
+                { label: 'Right Color', name: rightBlobColor, widget: color },
                 {
                   label: Clients,
                   name: items,

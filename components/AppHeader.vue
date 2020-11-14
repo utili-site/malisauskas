@@ -4,7 +4,7 @@
       <div class="header__actions">
         <AppLogo class="header__logo" />
         <nav class="header__nav" v-if="nav">
-          <NuxtLink class="header__link" v-for="{ page, label } in nav" v-text="label" :to="page" :key="page" />
+          <NuxtLink class="header__link" v-for="{ page, label } in nav" v-text="label" :to="`/${page}`" :key="page" />
         </nav>
       </div>
       <div class="header__info">
@@ -55,12 +55,17 @@ export default {
 <style lang="scss">
 .header {
   color: #000;
+  padding: 1.3rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  right: 0;
   &__container {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.3rem 1.5rem;
   }
   &__actions {
     display: flex;

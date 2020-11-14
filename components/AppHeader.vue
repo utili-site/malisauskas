@@ -35,7 +35,7 @@ import IconPhone from "@/components/icons/IconPhone";
 export default {
   components: {
     AppBtn,
-    AppLogo,
+    // AppLogo,
     IconEmail,
     IconPhone,
   },

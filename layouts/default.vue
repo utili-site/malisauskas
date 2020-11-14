@@ -2,10 +2,9 @@
   <div class="app" :style="pageStyle">
     <div class="app__view">
       <AppHeader class="app__header" :header="header" some="prop" />
-      <div class="app__blob app__blob--left" :style="leftBlobStyle" />
-      <div class="app__blob app__blob--right" :style="rightBlobStyle" />
-      <!-- <Nuxt @set-blobs-colors="handleBlobColors" class="app__page" keep-alive /> -->
-      <Nuxt class="app__page" />
+      <div class="app__blob app__blob--left" :style="$store.getters.leftBlobStyle" />
+      <div class="app__blob app__blob--right" :style="$store.getters.rightBlobStyle" />
+      <Nuxt class="app__page" keep-alive />
     </div>
     <AppFooter class="app__footer" ref="footer" :footer="footer" />
     <aside class="app__sidebar sidebar"></aside>
@@ -23,6 +22,11 @@ export default {
     AppHeader,
     AppFooter,
   },
+  computed: {
+    pageStyle: ({ footerHeight }) => ({ paddingBottom: `${footerHeight}px` }),
+    leftBlobStyle: ({ $store }) => $store.getters.leftBlobStyle,
+    rightBlobStyle: ({ footerHeight }) => $store.getters.rightBlobStyle,
+  },
   data: () => ({
     header: {},
     footer: {},
@@ -31,11 +35,6 @@ export default {
     leftBlobColor: null,
     rightBlobColor: null,
   }),
-  computed: {
-    pageStyle: ({ footerHeight }) => ({ paddingBottom: `${footerHeight}px` }),
-    rightBlobStyle: ({ $router }) => ({ backgroundColor: $router.app.leftBlobColor }),
-    rightBlobStyle: ({ $router }) => ({ backgroundColor: $router.app.rightBlobColor }),
-  },
   mounted() {
     this.footerHeight = this.$refs.footer.$el.clientHeight;
   },
@@ -75,14 +74,15 @@ export default {
     right: 0;
   }
   &__blob {
-    position: absolute;
+    // position: absolute;
+    position: fixed;
     z-index: 1;
     width: 75vw;
     height: 75vw;
     border-radius: 50%;
-    background-color: red;
-    opacity: 0.2;
     filter: blur(150px);
+    will-change: background-color;
+    transition: background-color .8s linear;
     &--left {
       top: -50vw;
       left: -20vw;

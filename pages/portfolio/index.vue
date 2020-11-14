@@ -26,9 +26,14 @@ export default {
   components: {
     PageIntro,
   },
-  async asyncData({ $content }) {
+  async asyncData({ $content, store }) {
     const document = await $content("portfolio").fetch();
     const { slug, title, blocks } = document;
+
+    store.commit("setBlobColors", {
+      leftBlobColor: document.leftBlobColor,
+      rightBlobColor: document.rightBlobColor,
+    });
 
     const works = await $content("works").fetch();
     const portfolio = blocks.map((block) => works.find(({ title }) => title === block));

@@ -48,6 +48,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 3;
   }
   &__copyright {
     display: flex;

@@ -1,5 +1,7 @@
 ---
 title: Our work speaks for itself
+leftBlobColor: "#8fb285"
+rightBlobColor: "#fbff00"
 blocks:
   - Passport Journal
   - Poklet

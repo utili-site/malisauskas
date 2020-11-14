@@ -22,9 +22,14 @@ export default {
   components: {
     PageIntro,
   },
-  async asyncData({ $content }) {
+  async asyncData({ $content, store }) {
     const document = await $content("services").fetch();
     const { slug, title, blocks } = document;
+
+    store.commit("setBlobColors", {
+      leftBlobColor: document.leftBlobColor,
+      rightBlobColor: document.rightBlobColor,
+    });
 
     return { slug, title, document, services: document.items };
   },

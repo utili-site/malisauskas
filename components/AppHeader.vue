@@ -19,7 +19,7 @@
           </a>
         </div>
         <div class="header__talk">
-          <AppBtn type="button" :label="talk" />
+          <AppBtn type="button" :label="talk" :style="$store.getters.talkBtnColor" />
         </div>
       </div>
     </div>

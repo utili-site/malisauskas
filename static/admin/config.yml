@@ -11,7 +11,7 @@ collections:
     {
       name: pages,
       label: Pages,
-      create: true,
+      create: false,
       files:
         [
           {
@@ -37,18 +37,12 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
-                {
-                  label: Body,
-                  name: body,
-                  minimal: true,
-                  widget: markdown,
-                  required: false,
-                },
+                { label: Body, name: body, minimal: true, widget: markdown, required: false },
                 {
                   label: Blocks,
                   name: blocks,
                   widget: list,
-                  summary: '{{block}}',
+                  summary: "{{block}}",
                   field:
                     {
                       label: Block,
@@ -74,12 +68,7 @@ collections:
                 { label: "Featured Image", name: featured, widget: image },
                 { label: "More URL", name: url, widget: string },
                 { label: "More label", name: more, widget: string },
-                {
-                  label: Tags,
-                  name: tags,
-                  widget: list,
-                  field: { label: Tag, name: tag, widget: string },
-                },
+                { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } },
               ],
           },
           {
@@ -94,7 +83,7 @@ collections:
                   label: Clients,
                   name: items,
                   widget: list,
-                  summary: '{{fields.title}}',
+                  summary: "{{fields.title}}",
                   fields:
                     [
                       { label: Titlte, name: title, widget: string },
@@ -116,32 +105,48 @@ collections:
       fields:
         [
           { label: Title, name: title, widget: string },
-          {
-            label: Body,
-            name: body,
-            minimal: true,
-            widget: markdown,
-            required: false,
-          },
-          {
-            label: "Thumbnail Image",
-            name: thumbnail,
-            widget: image,
-            required: false,
-          },
-          {
-            label: "Featured Image",
-            name: featured,
-            widget: image,
-            required: false,
-          },
+          { label: Body, name: body, minimal: true, widget: markdown, required: false },
+          { label: "Thumbnail Image", name: thumbnail, widget: image, required: false },
+          { label: "Featured Image", name: featured, widget: image, required: false },
           { label: "More URL", name: url, widget: string, required: false },
           { label: "More label", name: more, widget: string, required: false },
+          { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } },
+        ],
+    },
+    {
+      name: ui,
+      label: UI,
+      create: false,
+      files:
+        [
           {
-            label: Tags,
-            name: tags,
-            widget: list,
-            field: { label: Tag, name: tag, widget: string },
+            label: Header,
+            name: header,
+            file: "content/ui/header.md",
+            fields:
+              [
+                { label: Phone, name: phone, widget: string, required: false },
+                { label: Email, name: email, widget: string, required: false },
+                { label: "Let's talk", name: talk, widget: string },
+                {
+                  label: Navigation,
+                  name: nav,
+                  widget: list,
+                  summary: "{{block}}",
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      {
+                        label: Page,
+                        name: page,
+                        widget: relation,
+                        collection: pages,
+                        value_field: title,
+                        search_fields: ["title", "body"],
+                      },
+                    ],
+                },
+              ],
           },
         ],
     },

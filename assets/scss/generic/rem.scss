@@ -1,0 +1,13 @@
+$base: 10; // base font size in pixels
+$break: 1440; // design size
+$scale: 45; // viewport scale factor
+$vw: (1000 / (100 / $scale) / $break) * 1vw;
+$fsz: ((100 - $scale) / 100 * $base) * 1px;
+
+html {
+  font-size: $base * 1px;
+
+  @include laptop {
+    font-size: calc(#{$vw} + #{$fsz});
+  }
+}

@@ -1,0 +1,82 @@
+.contacts {
+  @include flex;
+  font-weight: 500;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 50% 50%, #f8d244 10%, #e9b907 100%);
+  padding: 8.9rem 2rem 4rem;
+  font-size: 1.2rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+  @include tablet {
+    font-size: 1.4rem;
+    padding-top: 10.6rem;
+  }
+
+  &__scene {
+    max-width: 11.5rem;
+    max-height: 11.5rem;
+    margin: 5vh auto 2vh;
+    @include tablet {
+      margin: 2vh auto;
+      max-width: none;
+      max-height: none;
+      text-transform: uppercase;
+    }
+  }
+
+  &__phone {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 2.8rem 0;
+    letter-spacing: 0.25em;
+  }
+
+  &__info {
+    padding: 0.5rem 0;
+    position: relative;
+    letter-spacing: 0.25em;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1.3rem;
+      background-color: #0d0d0d;
+      opacity: 0.13;
+      display: block;
+      width: 2.6rem;
+      height: 0.5rem;
+      left: calc(50% - 1.3rem);
+      transform: skewY(-16deg);
+    }
+  }
+
+  &__row {
+    padding: 0.3rem 0 0.4rem;
+    width: 100%;
+  }
+
+  &__entry {
+    display: inline-block;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__actions {
+  }
+
+  &__action {
+    margin: 1rem 0;
+    @include tablet {
+      margin: 1rem;
+    }
+  }
+}

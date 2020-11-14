@@ -1,0 +1,100 @@
+.gateway {
+  height: 100vh;
+  min-height: 50rem;
+  position: relative;
+
+  &__logo {
+    position: absolute;
+    top: 2.7rem;
+    left: calc(50% - 3.8rem);
+    width: 7.6rem;
+    height: 1.5rem;
+    display: block;
+    font-size: 0;
+    z-index: 2;
+
+    @include tablet {
+      width: 9.9rem;
+      height: 1.9rem;
+      top: 3.3rem;
+      left: calc(50% - 5rem);
+    }
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  &__blocks {
+    height: inherit;
+    min-height: inherit;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__scene {
+    z-index: 2;
+    max-width: 15.2rem;
+    max-height: 15.2rem;
+
+    @include tablet {
+      max-width: none;
+      max-height: none;
+    }
+  }
+
+  &__block {
+    position: relative;
+    overflow: hidden;
+    height: 50vh;
+    min-height: 25rem;
+    @include flex;
+
+    @include tablet {
+      width: 50%;
+      height: inherit;
+      min-height: inherit;
+      transition: width 500ms var(--e);
+    }
+
+    &--teal {
+      background-image: radial-gradient(circle at 50% 50%, #abded5 10%, #009ec3 120%);
+
+      height: calc(50vh + 3.5rem);
+      min-height: calc(25rem + 3.5rem);
+      padding-top: 7rem;
+
+      @include tablet {
+        padding-top: 0;
+        height: inherit;
+        min-height: inherit;
+      }
+    }
+
+    &--yellow {
+      background-image: radial-gradient(circle at 50% 50%, #fcd751 10%, #ebbb0d 120%);
+      height: calc(50vh - 3.5rem);
+      min-height: calc(25rem - 3.5rem);
+
+      @include tablet {
+        height: inherit;
+        min-height: inherit;
+      }
+    }
+
+    &:after {
+      content: '';
+      @include absolute;
+      background-image: inherit;
+      z-index: 1;
+      transition: transform 800ms var(--e);
+    }
+  }
+
+  &__trigger {
+    @include absolute;
+    z-index: 3;
+  }
+}

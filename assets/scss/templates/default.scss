@@ -1,0 +1,62 @@
+.default {
+  &__container {
+    &--pricing {
+      max-width: 98rem;
+    }
+  }
+  &__content {
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    padding: 4.9rem 0;
+
+    @include tablet {
+      padding: 6.7rem 0;
+    }
+  }
+
+  &__section {
+    position: relative;
+
+    &--player {
+      padding: 0rem 0 1.6rem;
+
+      @include tablet {
+        padding: 4.7rem 0 6.5rem;
+      }
+    }
+  }
+
+  &__wysiwyg {
+    padding: 1rem 0;
+
+    @include tablet {
+      padding: 2.9rem 0;
+    }
+  }
+
+  &__quick-nav {
+    margin-top: -2.7rem;
+    margin-bottom: -1.1rem;
+
+    @include tablet {
+      margin-top: -4rem;
+      margin-bottom: 6.1rem;
+    }
+  }
+
+  &__expand {
+    @include tablet {
+      padding: 1.7rem 0;
+    }
+  }
+
+  &__player {
+    transition: border-width 300ms;
+    border: solid 0.4rem #ffd800;
+
+    @include tablet {
+      border: solid 1.2rem #ffd800;
+    }
+  }
+}

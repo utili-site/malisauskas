@@ -1,0 +1,133 @@
+.nav {
+  font-family: 'Cervo', Arial, Helvetica, sans-serif;
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @include tablet {
+      position: relative;
+      min-height: 100vh;
+      padding: 4rem 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__visual {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 58.4%;
+      padding-right: 11.5%;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    padding: 3rem;
+
+    @include tablet {
+      text-align: left;
+      position: relative;
+      display: block;
+      width: 41.6%;
+      padding: 0;
+      z-index: 5;
+    }
+  }
+
+  &__items {
+    margin: 4rem 0 0;
+  }
+
+  &__trigger {
+    font-size: 2.4rem;
+    font-weight: 500;
+    padding: 0.9rem 0;
+    display: inline-block;
+    text-transform: uppercase;
+
+    letter-spacing: 0.2em;
+    transition: transform 600ms var(--easeOutBack), color 200ms var(--e);
+    transform-origin: 0% 100%;
+
+    @include tablet {
+      padding: 0.4rem 0 0.5rem;
+      font-size: 3.6rem;
+    }
+
+    @include hover {
+      color: #fdc805;
+      transform: translate3d(0, -0.2rem, 0) scale(1.02, 0.96) skewY(1deg);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    padding: 1.5rem 0;
+    text-align: center;
+    justify-content: center;
+
+    @include tablet {
+      justify-content: flex-start;
+      text-align: left;
+      padding: 2.5rem 0;
+    }
+  }
+
+  &__social {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      max-width: 2.4rem;
+      max-height: 1.8rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    path {
+      fill: currentColor;
+      transition: fill 200ms var(--e);
+    }
+
+    @include tablet {
+      margin: 0 3rem 0 0;
+    }
+
+    @include hover {
+      path {
+        fill: #fdc805;
+      }
+    }
+  }
+
+  &__close {
+    position: fixed;
+    top: 1.3rem;
+    right: 1.7rem;
+    font-size: 1.4rem;
+
+    @include tablet {
+      top: 2.6rem;
+      right: 7.3rem;
+    }
+  }
+}

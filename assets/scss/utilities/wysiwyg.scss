@@ -1,0 +1,54 @@
+._wysiwyg {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Gotham', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  p {
+    word-wrap: break-word;
+    margin: 0.6em 0 1.7em;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h3 {
+    // margin:
+    font-size: 1.8rem;
+    margin: 4rem 0 1.2rem;
+    line-height: 1.33333;
+    letter-spacing: 0.04em;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0rem;
+  }
+
+  ul {
+    margin: -0.6rem 0 3.3rem;
+
+    li {
+      padding: 0.3rem 0 0.4rem 5rem;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 1.4rem;
+        left: 0rem;
+        height: 0.2rem;
+        width: 3.5rem;
+        background-color: var(--primaryColor);
+      }
+    }
+  }
+}

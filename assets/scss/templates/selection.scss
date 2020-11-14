@@ -1,0 +1,78 @@
+.selection {
+  &__blocks {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    height: 35.3rem;
+    overflow: hidden;
+    position: relative;
+    background-image: radial-gradient(circle at 50% 50%, #d9eeea 10%, #bde1db 100%);
+
+    @include tablet {
+      width: 50%;
+      // padding-top: 55.2%;
+      height: 69.5rem;
+    }
+
+    &:nth-child(2n + 2) {
+      background-image: radial-gradient(circle at 50% 50%, #d0e8e3 10%, #abd6cd 100%);
+
+      @include tablet {
+        background-image: radial-gradient(circle at 50% 50%, #d9eeea 10%, #bde1db 100%);
+      }
+    }
+
+    &:nth-child(4n + 2) {
+      @include tablet {
+        background-image: radial-gradient(circle at 50% 50%, #d0e8e3 10%, #abd6cd 100%);
+      }
+    }
+
+    &:nth-child(4n + 3) {
+      @include tablet {
+        background-image: radial-gradient(circle at 50% 50%, #d0e8e3 10%, #abd6cd 100%);
+      }
+    }
+
+    @include hover {
+      .selection {
+        &__media {
+          opacity: 0.07;
+        }
+      }
+    }
+  }
+
+  &__visual {
+    @include absolute;
+    @include flex;
+    z-index: 2;
+    padding-top: 4.4rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__media {
+    @include absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 500ms var(--e);
+  }
+
+  &__trigger {
+    @include absolute;
+    z-index: 3;
+  }
+
+  &__scene {
+    max-width: 19rem;
+    max-height: 19rem;
+  }
+}

@@ -1,0 +1,4 @@
+// // TEMP prevent initial page load transition flashing :((
+.preload * {
+  transition: none !important;
+}

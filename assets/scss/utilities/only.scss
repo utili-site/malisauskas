@@ -1,0 +1,13 @@
+._only-desk {
+  display: none;
+
+  @include laptop {
+    display: block;
+  }
+}
+
+._only-mob {
+  @include laptop {
+    display: none;
+  }
+}

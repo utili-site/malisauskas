@@ -1,0 +1,59 @@
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 1.8rem;
+}
+.swiper-pagination-bullet {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  opacity: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+  }
+  &:before {
+    border: solid 1px #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 200ms var(--e), transform 200ms var(--e);
+    transform: scale(0.5);
+  }
+  &:after {
+    top: 0.6rem;
+    right: 0.6rem;
+    left: 0.6rem;
+    bottom: 0.6rem;
+    background-color: #fff;
+  }
+  @include hover {
+    &:before {
+      transform: scale(0.8);
+      opacity: 0.3;
+    }
+  }
+  &.swiper-pagination-bullet-active {
+    &:before {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+  @include hover {
+    &:before {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
+
+  }
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0.4rem;
+}

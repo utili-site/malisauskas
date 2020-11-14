@@ -1,0 +1,129 @@
+@keyframes bounce {
+  0% {
+    transform: translate3d(-60%, 10%, 0) scale(0.9);
+  }
+
+  30% {
+    transform: translate3d(-30%, 5%, 0) scale(0.95);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  70% {
+    transform: translate3d(30%, 5%, 0) scale(0.95);
+  }
+
+  100% {
+    transform: translate3d(60%, 10%, 0) scale(0.9);
+  }
+}
+
+@keyframes hover {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    // transform: translate3d(0, 2rem, 0) scale(1.05);
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hoverMin {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 2.5rem, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dir {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0.4rem, 0);
+    opacity: 0.6;
+  }
+}
+
+@keyframes dot {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0.2rem, 0) scale(1.2);
+  }
+}
+
+@keyframes ok {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(-5deg) scale(1.02);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1.04);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: initial;
+  }
+
+  30% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes mercuryTypingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  28% {
+    transform: translateY(-0.8rem);
+  }
+
+  44% {
+    transform: translateY(0);
+  }
+}

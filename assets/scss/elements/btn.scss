@@ -1,0 +1,75 @@
+.btn {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.14;
+  font-size: 1.6rem;
+  min-height: 5.4rem;
+  padding: 1.1rem 1.6rem 0.5rem;
+  color: #222222;
+  border-radius: 2.7rem;
+  font-family: "Cervo", Arial, Helvetica, sans-serif;
+  transition: color 200ms var(--e), background-color 200ms var(--e), border-color 200ms var(--e);
+  width: 100%;
+  min-width: 25.4rem;
+  border: solid 1px #fdc805;
+
+  @include tablet {
+    width: auto;
+  }
+
+  path,
+  polygon {
+    transition: fill 360ms var(--e);
+    fill: currentColor;
+    position: relative;
+    z-index: 4;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 4;
+    color: currentColor;
+    // transition: color 360ms var(--e);
+    margin: 0 0.6rem;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    width: 1.6rem;
+    text-align: center;
+    color: currentColor;
+    margin: 0 0.6rem;
+    transition: color 360ms var(--e), transform 360ms var(--e);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: auto;
+    }
+  }
+
+  @include hover {
+    text-decoration: none;
+    background-color: #f3c007;
+    border-color: #f3c007;
+  }
+
+  &--white {
+    background-color: #fff;
+    border-color: #fff;
+
+    @include hover {
+      background-color: #efefef;
+      border-color: #efefef;
+    }
+  }
+}

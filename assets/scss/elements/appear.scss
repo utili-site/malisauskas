@@ -1,0 +1,19 @@
+.appear {
+  transform: translate3d(0, 3rem, 0);
+  opacity: 0;
+  transition: transform 1s var(--e), opacity 1s var(--e);
+  will-change: transform, opacity;
+  &.is-entering {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  &.has-entered {
+    opacity: 1;
+    transform: none;
+  }
+  &.is-leaving {
+    transform: translate3d(0, 3rem, 0);
+    opacity: 0;
+    transition: transform 1s var(--e), opacity 1s var(--e);
+  }
+}

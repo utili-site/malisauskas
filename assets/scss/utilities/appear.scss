@@ -1,0 +1,11 @@
+._appear {
+  opacity: 0;
+  transform: translateZ(0) translateY(3rem);
+  transition: all 600ms ease-in-out;
+  will-change: opacity, transform;
+
+  &.in-viewport {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}

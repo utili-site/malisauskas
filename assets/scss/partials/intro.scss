@@ -1,0 +1,41 @@
+.intro {
+  @include flex;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-top: 2.6rem;
+  height: 42.6rem;
+
+  @include tablet {
+    padding-top: 4rem;
+    height: 40.2rem;
+  }
+
+  &__background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-image: url('../img/intro__background--mobile.webp'),
+      url('../img/intro__background--mobile.png');
+
+    @include tablet {
+      background-image: url('../img/intro__background--desktop.webp'),
+        url('../img/intro__background--desktop.png');
+    }
+  }
+
+  &__scene {
+    // &.is-waiting {
+    //   transform: translateY(35rem);
+    // }
+  }
+}

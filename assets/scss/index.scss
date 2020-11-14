@@ -1,0 +1,97 @@
+//////// ITCSS - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+@charset "utf-8";
+
+////////////////////////////////////////////////////////////////
+//////// 0. TOOLS - Global settings, variables and mixins
+////////////////////////////////////////////////////////////////
+
+// global CSS variables
+@import 'mixins/variables';
+// media queries mixin
+@import 'mixins/media-queries';
+// easing function
+@import 'mixins/easings';
+
+////////////////////////////////////////////////////////////////
+//////// 1. GENERIC - all kind of resets, fonts and raw styling
+////////////////////////////////////////////////////////////////
+
+// Fonts
+@import 'generic/fonts';
+// various resets (box-sizing, inputs, etc)
+@import 'generic/resets';
+// raw element styling and resets
+@import 'generic/base';
+// REM scaling function
+// @import 'generic/rem';
+// h1-h5 and paragraphs
+@import 'generic/typography';
+// // global animations & transitions
+@import 'generic/animations';
+
+////////////////////////////////////////////////////////////////
+//////// 2. PLUGINS - JS plugins common styles
+////////////////////////////////////////////////////////////////
+
+// Swiper
+// vendor styles for JS plugins
+// @import '../../node_modules/swiper/dist/css/swiper';
+// custom styles for JS plugins
+// @import 'plugins/swiper';
+
+////////////////////////////////////////////////////////////////
+//////// 3. ELEMENTS - reusable/shared small UI pieces
+////////////////////////////////////////////////////////////////
+
+@import 'elements/appear';
+@import 'elements/btn';
+@import 'elements/container';
+@import 'elements/form';
+@import 'elements/media';
+@import 'elements/underlink';
+
+////////////////////////////////////////////////////////////////
+//////// 4. COMPONENTS - larger reusable/shared UI blocks
+////////////////////////////////////////////////////////////////
+
+// @import 'components/scene';
+
+////////////////////////////////////////////////////////////////
+//////// 5. PARTIALS - layout chunks, which can be used only once per template
+////////////////////////////////////////////////////////////////
+
+// @import 'partials/content';
+// @import 'partials/cookiebar';
+// @import 'partials/header';
+// @import 'partials/intro';
+// @import 'partials/modal';
+// @import 'partials/nav';
+// @import 'partials/navicon';
+
+// @import 'partials/app';
+
+////////////////////////////////////////////////////////////////
+//////// 6. TEMPLATES - templace-specific styling
+////////////////////////////////////////////////////////////////
+
+// @import 'templates/default';
+
+////////////////////////////////////////////////////////////////
+//////// 7. UTILITIES - functional styling
+////////////////////////////////////////////////////////////////
+
+// @import 'utilities/wysiwyg';
+// @import 'utilities/will-transform';
+
+////////////////////////////////////////////////////////////////
+// 8. HACKS - Browser-specific hacks
+////////////////////////////////////////////////////////////////
+
+// IE - specific hacks
+// @import 'hacks/ie';
+// iOS - specific hacks
+// @import 'hacks/ios';
+// Plain dirty hacks -- use this, when you don't know what youre doing
+// @import 'hacks/shame';
+
+@import 'app';

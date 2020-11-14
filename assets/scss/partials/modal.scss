@@ -1,0 +1,107 @@
+.modal {
+  transition: opacity 820ms var(--e), height 1ms linear 999s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  overflow: hidden;
+  display: none;
+  pointer-events: all;
+  &.will-enter {
+    opacity: 0;
+    display: block;
+  }
+  &.is-entering {
+    opacity: 1;
+  }
+  &.has-entered {
+    display: block;
+  }
+  &.will-leave {
+    display: block;
+  }
+  &.is-leaving {
+    opacity: 0;
+    display: block;
+  }
+
+  &__backdrop {
+    z-index: 1;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+  }
+
+  &__wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 7.2rem 0;
+    z-index: 2;
+    @include tablet {
+      padding: 9rem 4rem;
+    }
+  }
+
+  &__dialog {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    z-index: 2;
+    width: 100%;
+    display: block;
+  }
+
+  &__header {
+    height: 7.2rem;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: solid 1px #efefef;
+    z-index: 3;
+    @include tablet {
+      height: 9rem;
+      border-bottom: none;
+    }
+  }
+
+  &__content {
+    z-index: 2;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.3rem;
+    right: 1.7rem;
+    z-index: 3;
+    font-size: 1.4rem;
+
+    @include tablet {
+      position: fixed;
+      top: 2.6rem;
+      right: 4rem;
+    }
+  }
+  &__title {
+    text-align: center;
+    padding: 2rem;
+    @include tablet {
+      padding: 3rem;
+    }
+  }
+}

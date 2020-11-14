@@ -3,8 +3,8 @@ phone: +370 623 22 232
 email: erikas@malisauskas.lt
 talk: Let's talk
 nav:
-  - page: Our work speaks for itself
+  - page: clients
     label: Clients
-  - page: Our work speaks for itself
+  - page: portfolio
     label: Work
 ---

@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
+  <div class="app" :style="pageStyle">
     <div class="app__transitions transitions"></div>
     <AppHeader class="app__header" :header="header" />
     <Nuxt class="app__page" keep-alive />
-    <AppFooter class="app__footer" :footer="footer" />
+    <AppFooter class="app__footer" ref="footer" :footer="footer" />
     <div class="app__sidebar sidebar"></div>
     <div class="app__portal portal"></div>
   </div>
@@ -22,7 +22,19 @@ export default {
     header: null,
     footer: null,
     misc: null,
+    footerHeight: 0,
   }),
+  computed: {
+    // pageStyle: (footerHeight) => ({ paddingBottom: `${footerHeight}px` }),
+    pageStyle: ({ footerHeight }) => {
+      console.log(footerHeight);
+      return { paddingBottom: `${footerHeight}px` };
+    },
+  },
+  mounted() {
+    this.footerHeight = this.$refs.footer.$el.clientHeight;
+    console.log(this.footerHeight);
+  },
   async fetch() {
     // this.posts = await this.$http.$get("https://api.nuxtjs.dev/posts");
     this.header = await this.$content("ui", "header").fetch();
@@ -32,20 +44,29 @@ export default {
 };
 </script>
 
-<style src="@/assets/scss/index.scss" lang="scss">
-html {
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<style src="@/assets/scss/index.scss" lang="scss" />
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+<style lang="scss">
+.app {
+  position: relative;
+  &__header {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  &__page {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+  }
+  &__footer {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 </style>

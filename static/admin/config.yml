@@ -59,7 +59,7 @@ collections:
           },
           {
             label: Services,
-            name: servies,
+            name: services,
             file: "content/services.md",
             fields:
               [

@@ -13,6 +13,10 @@ items:
     logo: /images/uploads/passport-client.png
     body: Award-winning publication on Lithuanian identity
     url: http://google.com
+  - title: Hautica
+    logo: /images/uploads/hautica-client.png
+    body: Printing and order fulfilment company
+    url: http://google.com
   - title: Soda Futura
     logo: /images/uploads/sodafutura-client.png
     body: Premium hand-made jewelry brand

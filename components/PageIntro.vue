@@ -1,34 +1,36 @@
 <template>
   <div class="intro">
-    <div class="intro__container container">
-      <div class="intro__slug" v-if="slug" v-text="document.slug" />
-      <h1 class="intro__slug" v-if="title" v-text="title" />
-      <nuxt-content class="intro__text" v-if="document" :document="document" />
-    </div>
+    <div class="intro__slug" v-if="slug" v-text="slug" />
+    <h1 v-if="title" v-text="title" />
+    <nuxt-content class="intro__text" v-if="document" :document="document" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    slug: {
-      type: String,
-      default: null,
-    },
-    title: {
-      type: String,
-      default: null,
-    },
     document: {
       type: Object,
       default: null,
     },
   },
+  computed: {
+    slug: ({ document }) => document.slug,
+    title: ({ document }) => document.title,
+  },
 };
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
+<style lang="scss">
+.intro {
+  padding: 15.5rem 0 13.2rem;
+  &__slug {
+    color: #555;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.7rem;
+    text-transform: uppercase;
+    padding: 1.8rem;
+  }
 }
 </style>

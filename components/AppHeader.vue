@@ -56,11 +56,6 @@ export default {
 .header {
   color: #000;
   padding: 1.3rem 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  left: 0;
-  right: 0;
   &__container {
     position: relative;
     display: flex;

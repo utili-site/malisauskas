@@ -1,11 +1,7 @@
 <template>
   <div class="page page--portfolio">
     <div class="page__container container">
-      <div class="page__intro intro">
-        <div class="intro__slug" v-text="slug" />
-        <h1 class="intro__slug" v-text="title" />
-        <nuxt-content class="intro__text" :document="document" />
-      </div>
+      <Intro class="page__intro" :slug="slug" :title="title" :document="document" />
       <div class="page__portfolio portfolio">
         <div class="portfolio__grid">
           <div class="portfolio__block" v-for="({ slug, thumbnail, ...work }, index) in portfolio" :key="slug">
@@ -22,7 +18,12 @@
 </template>
 
 <script>
+import Intro from "@/components/Intro";
+
 export default {
+  components: {
+    Intro,
+  },
   async asyncData({ $content }) {
     const document = await $content("portfolio").fetch();
     const { slug, title, blocks } = document;

@@ -107,7 +107,7 @@ collections:
     },
     {
       name: works,
-      label: Portfolio,
+      label: Works,
       folder: "content/works",
       create: true,
       slug: "{{slug}}",

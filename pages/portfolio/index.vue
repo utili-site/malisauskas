@@ -6,8 +6,8 @@
 export default {
   async asyncData({ $content }) {
     const portfolio = await $content("portfolio").fetch();
-    const { items: clients } = await $content("clients").fetch();
-    console.log('index', { portfolio });
+    const works = await $content("works").fetch();
+    console.log('index', { portfolio, works });
 
     return { portfolio };
   },

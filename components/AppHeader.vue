@@ -19,7 +19,7 @@
           </a>
         </div>
         <div class="header__talk">
-          {{ talk }}
+          <AppBtn type="button" :label="talk" />
         </div>
       </div>
     </div>
@@ -28,11 +28,13 @@
 
 <script>
 import AppLogo from "@/components/AppLogo";
+import AppBtn from "@/components/AppBtn";
 import IconEmail from "@/components/icons/IconEmail";
 import IconPhone from "@/components/icons/IconPhone";
 
 export default {
   components: {
+    AppBtn,
     AppLogo,
     IconEmail,
     IconPhone,
@@ -93,12 +95,6 @@ export default {
     padding: 0 2.1rem;
   }
   &__talk {
-    color: red;
-    font-weight: 700;
-    display: inline-flex;
-    padding: 0.9rem;
-    width: 10.5rem;
-    background-color: #000;
   }
 }
 .contacts {

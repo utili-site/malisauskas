@@ -1,0 +1,9 @@
+html:before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  left: 0;
+  height: 100vh;
+  top: 100%;
+  background-color: tomato;
+}

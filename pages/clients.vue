@@ -46,6 +46,7 @@ export default {
   }
   &__logo {
     position: relative;
+    display: inline-block;
   }
   &__image {
     width: 19rem;

@@ -30,7 +30,7 @@ items:
     body: Curated tax information subscription for accountants
     url: http://google.com
   - title: coursalytics
-    logo: /images/uploads/sufleris-client.png
+    logo: /images/uploads/coursalytics-client.png
     body: A marketplace for executive-level education
     url: http://google.com
 ---

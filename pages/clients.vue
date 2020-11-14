@@ -27,9 +27,6 @@ export default {
   async asyncData({ $content }) {
     const document = await $content("clients").fetch();
     const { slug, title, blocks } = document;
-    console.log(document.items);
-
-    // const clients = blocks.map((block) => works.find(({ title }) => title === block));
 
     return { slug, title, document, clients: document.items };
   },

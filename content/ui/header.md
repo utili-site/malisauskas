@@ -7,4 +7,6 @@ nav:
     label: Clients
   - page: portfolio
     label: Work
+  - page: servies
+    label: Services
 ---

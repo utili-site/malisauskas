@@ -40,6 +40,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies 👨🏻‍💻
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
       - name: Build
@@ -51,7 +52,7 @@ jobs:
           ftp_host: ${{ secrets.FTP_HOST_DEV }}
           ftp_username: ${{ secrets.FTP_USERNAME_DEV }}
           ftp_password: ${{ secrets.FTP_PASSWORD_DEV }}
-          local_source_dir: "dist/*"
+          local_source_dir: "dist"
           dist_target_dir: "/"
           delete: "true"
 

@@ -36,11 +36,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.footer__logo {
-  width: 100px;
-  height: 100px;
-  margin: auto;
-}
-</style>

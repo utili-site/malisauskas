@@ -8,7 +8,7 @@
             <div class="portfolio__work">
               <!-- <nuxt-picture class="portfolio__thumbnail" sizes="300 (webp),300:600 (jpeg),600:900" :src="thumbnail" /> -->
               <img class="portfolio__thumbnail" :src="thumbnail" />
-              <NuxtLink :to="`${slug}/${work.slug}`">{{ title }}</NuxtLink>
+              <NuxtLink class="portfolio__link" :to="`${slug}/${work.slug}`">{{ title }}</NuxtLink>
               {{ (work, index) }}
             </div>
           </div>
@@ -31,15 +31,8 @@ export default {
 
     const works = await $content("works").fetch();
     const portfolio = blocks.map((block) => works.find(({ title }) => title === block));
-    console.log(slug);
 
     return { slug, title, portfolio, document };
   },
 };
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-}
-</style>

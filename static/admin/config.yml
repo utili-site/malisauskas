@@ -20,6 +20,7 @@ collections:
             file: "content/home.md",
             fields:
               [
+                { label: Title, name: title, widget: string },
                 { label: "Hero Prefix", name: hero_prefix, widget: string },
                 {
                   label: "Hero Variants",
@@ -128,24 +129,19 @@ collections:
                 { label: Phone, name: phone, widget: string, required: false },
                 { label: Email, name: email, widget: string, required: false },
                 { label: "Let's talk", name: talk, widget: string },
-                {
-                  label: Navigation,
-                  name: nav,
-                  widget: list,
-                  summary: "{{fields.label}}",
-                  fields:
-                    [
+                { label: Navigation, name: nav, widget: list, summary: "{{fields.label}}", fields: [
                       { label: Label, name: label, widget: string },
                       {
                         label: Page,
                         name: page,
                         widget: relation,
                         collection: pages,
-                        value_field: title,
-                        search_fields: ["title", "body"],
+                        # value_field: title,
+                        value_field: "{{slug}}",
+                        display_fields: [title],
+                        search_fields: [title, body],
                       },
-                    ],
-                },
+                    ] },
               ],
           },
           {

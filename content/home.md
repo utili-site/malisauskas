@@ -1,4 +1,5 @@
 ---
+title: Home
 hero_prefix: Designing
 hero_variants:
   - user experiences

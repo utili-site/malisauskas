@@ -1,5 +1,7 @@
 ---
 title: We ❤️ our clients
+leftBlobColor: "#f9acff"
+rightBlobColor: "#84b6ff"
 items:
   - title: Baltic Petroleum
     logo: /images/uploads/bp-client.png

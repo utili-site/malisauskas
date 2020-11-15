@@ -72,8 +72,8 @@ collections:
                 { label: Body, name: body, minimal: true, widget: markdown },
                 { label: "Left Color", name: leftBlobColor, widget: color },
                 { label: "Right Color", name: rightBlobColor, widget: color },
-                { label: "Thumbnail Image", name: thumbnail, widget: image },
-                { label: "Featured Image", name: featured, widget: image },
+                { label: Years, name: years, widget: string },
+                { label: Experience, name: experience, widget: string },
                 {
                   label: Steps,
                   name: steps,
@@ -82,9 +82,7 @@ collections:
                   fields:
                     [
                       { label: Title, name: title, widget: string },
-                      { label: Logo, name: logo, widget: image },
                       { label: Body, name: body, widget: text },
-                      { label: URL, name: url, widget: string },
                     ],
                 },
                 {
@@ -169,7 +167,6 @@ collections:
                         name: page,
                         widget: relation,
                         collection: pages,
-                        # value_field: title,
                         value_field: "{{slug}}",
                         display_fields: [title],
                         search_fields: [title, body],

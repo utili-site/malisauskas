@@ -32,14 +32,10 @@ blocks:
       previews but it gets lost in the development process. That's why we like
       to develop our designs ourselves and promise a pixel-perfect outcome.
     background: /images/uploads/service-block-2.png
-thumbnail: /images/uploads/bp-featured.png
-featured: /images/uploads/bp_featured.png
-url: sdf
 title: What we do. And how.
 leftBlobColor: "#b29e85"
 years: "8"
 subtitle: Could use some help?
 cta: Let's talk
-more: sdf
 ---
-sdfg
+featured: /images/uploads/bp_featured.png

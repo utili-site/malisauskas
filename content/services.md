@@ -1,5 +1,8 @@
 ---
+title: What we do. And how.
+leftBlobColor: "#b29e85"
 rightBlobColor: "#ff982f"
+years: "8"
 experience: years of experience
 steps:
   - title: Understand
@@ -32,9 +35,6 @@ blocks:
       previews but it gets lost in the development process. That's why we like
       to develop our designs ourselves and promise a pixel-perfect outcome.
     background: /images/uploads/service-block-3.png
-title: What we do. And how.
-leftBlobColor: "#b29e85"
-years: "8"
 subtitle: Could use some help?
 cta: Let's talk
 ---

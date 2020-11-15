@@ -1,13 +1,13 @@
 <template>
-  <div class="arrow" :style="{ width: `${width}px` }" />
+  <div class="arrow" :style="{ width: width }" />
 </template>
 
 <script>
 export default {
   props: {
     width: {
-      type: Number,
-      default: 18,
+      type: String,
+      default: '18px',
     },
   },
 };

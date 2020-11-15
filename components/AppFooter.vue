@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__container container">
       <div class="footer__copyright">
-        <Logo class="footer__logo" />
+        <AppLogo class="footer__logo" />
         <div class="footer__footnote" v-text="footnote" />
       </div>
       <div class="footer__socials socials">
@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import Logo from "@/components/Logo";
+import AppLogo from "@/components/AppLogo";
 
 export default {
   components: {
-    Logo,
+    AppLogo,
   },
   props: {
     footer: {

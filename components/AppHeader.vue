@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__container container">
       <div class="header__actions">
-        <Logo class="header__logo" />
+        <AppLogo class="header__logo" />
         <nav class="header__nav" v-if="nav">
           <NuxtLink class="header__link" v-for="{ page, label } in nav" v-text="label" :to="`/${page}`" :key="page" />
         </nav>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Logo from "@/components/Logo";
+import AppLogo from "@/components/AppLogo";
 import AppBtn from "@/components/AppBtn";
 import IconEmail from "@/components/icons/IconEmail";
 import IconPhone from "@/components/icons/IconPhone";
@@ -35,7 +35,7 @@ import IconPhone from "@/components/icons/IconPhone";
 export default {
   components: {
     AppBtn,
-    Logo,
+    AppLogo,
     IconEmail,
     IconPhone,
   },

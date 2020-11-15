@@ -40,6 +40,8 @@ export default {
     '@nuxt/content',
     // https://image.nuxtjs.org/
     '@nuxt/image',
+    // https://cloudinary.nuxtjs.org
+    '@nuxtjs/cloudinary',
     // https://github.com/silvandiepen/nuxt-favicons
    'nuxt-rfg-icon',
   ],

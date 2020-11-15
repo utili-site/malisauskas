@@ -2,7 +2,7 @@
   <div class="intro">
     <div class="intro__slug" v-if="slug" v-text="slug" />
     <h1 v-if="title" v-text="title" />
-    <nuxt-content class="intro__text" v-if="document" :document="document" />
+    <NuxtContent class="intro__text" v-if="document" :document="document" />
   </div>
 </template>
 
@@ -42,6 +42,9 @@ export default {
 			border-bottom: .2rem solid currentColor;
 			border-left: .2rem solid currentColor;
 		}
+  }
+  &__text {
+    width: 65%;
   }
 }
 </style>

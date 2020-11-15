@@ -95,7 +95,7 @@ $border: 0.3rem;
     height: 50vmax;
   }
   &__info {
-		padding: 1.6rem 1rem 1rem 5.1rem;
+    padding: 1.6rem 1rem 1rem 5.1rem;
   }
   &__btn {
     margin: 2.8rem 0;

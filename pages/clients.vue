@@ -5,10 +5,9 @@
       <div class="page__clients clients">
         <div class="clients__grid">
           <div class="clients__block" v-for="{ logo, title, body, url } in clients" :key="title">
-            <div class="clients__logo" v-if="logo">
+            <a :href="url" class="clients__logo" target="_blank" v-if="logo">
               <img :src="logo" :alt="title" class="clients__image" />
-              <a :href="url" class="clients__link"></a>
-            </div>
+            </a>
             <div class="clients__text" v-if="body">{{ body }}</div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 ---
 rightBlobColor: "#ff982f"
+experience: years of experience
 steps:
   - title: Understand
     body: Understanding user perspective - their environment, behaviour and
@@ -36,6 +37,7 @@ featured: /images/uploads/bp_featured.png
 url: sdf
 title: What we do. And how.
 leftBlobColor: "#b29e85"
+years: "8"
 subtitle: Could use some help?
 cta: Let's talk
 more: sdf

@@ -1,7 +1,8 @@
 backend:
   name: github
   repo: utili-site/malisauskas
-  branch: main
+  branch: dev
+  # branch: main
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
@@ -21,8 +22,8 @@ collections:
             fields:
               [
                 { label: Title, name: title, widget: string },
-                { label: 'Left Color', name: leftBlobColor, widget: color },
-                { label: 'Right Color', name: rightBlobColor, widget: color },
+                { label: "Left Color", name: leftBlobColor, widget: color },
+                { label: "Right Color", name: rightBlobColor, widget: color },
                 { label: "Hero Prefix", name: hero_prefix, widget: string },
                 {
                   label: "Hero Variants",
@@ -41,8 +42,8 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, minimal: true, widget: markdown, required: false },
-                { label: 'Left Color', name: leftBlobColor, widget: color },
-                { label: 'Right Color', name: rightBlobColor, widget: color },
+                { label: "Left Color", name: leftBlobColor, widget: color },
+                { label: "Right Color", name: rightBlobColor, widget: color },
                 {
                   label: Blocks,
                   name: blocks,
@@ -69,13 +70,37 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, minimal: true, widget: markdown },
-                { label: 'Left Color', name: leftBlobColor, widget: color },
-                { label: 'Right Color', name: rightBlobColor, widget: color },
+                { label: "Left Color", name: leftBlobColor, widget: color },
+                { label: "Right Color", name: rightBlobColor, widget: color },
                 { label: "Thumbnail Image", name: thumbnail, widget: image },
                 { label: "Featured Image", name: featured, widget: image },
-                { label: "More URL", name: url, widget: string },
-                { label: "More label", name: more, widget: string },
-                { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } },
+                {
+                  label: Steps,
+                  name: steps,
+                  widget: list,
+                  summary: "{{fields.title}}",
+                  fields:
+                    [
+                      { label: Title, name: title, widget: string },
+                      { label: Logo, name: logo, widget: image },
+                      { label: Body, name: body, widget: text },
+                      { label: URL, name: url, widget: string },
+                    ],
+                },
+                {
+                  label: Services,
+                  name: blocks,
+                  widget: list,
+                  summary: "{{fields.title}}",
+                  fields:
+                    [
+                      { label: Title, name: title, widget: string },
+                      { label: Body, name: body, widget: text },
+                      { label: Background, name: background, widget: image },
+                    ],
+                },
+                { label: Subtitle, name: subtitle, widget: string },
+                { label: CTA, name: cta, widget: string },
               ],
           },
           {
@@ -86,8 +111,8 @@ collections:
               [
                 { label: Title, name: title, widget: string },
                 { label: Body, name: body, minimal: true, widget: markdown },
-                { label: 'Left Color', name: leftBlobColor, widget: color },
-                { label: 'Right Color', name: rightBlobColor, widget: color },
+                { label: "Left Color", name: leftBlobColor, widget: color },
+                { label: "Right Color", name: rightBlobColor, widget: color },
                 {
                   label: Clients,
                   name: items,
@@ -95,7 +120,7 @@ collections:
                   summary: "{{fields.title}}",
                   fields:
                     [
-                      { label: Titlte, name: title, widget: string },
+                      { label: Title, name: title, widget: string },
                       { label: Logo, name: logo, widget: image },
                       { label: Body, name: body, widget: "text" },
                       { label: URL, name: url, widget: string },

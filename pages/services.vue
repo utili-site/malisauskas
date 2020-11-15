@@ -1,8 +1,8 @@
 <template>
   <div class="page page--services">
-    <PageIntro class="page__intro" :slug="slug" :title="title" :document="document" />
-    <div class="page__services services">
-      <div class="page__container container">
+    <div class="page__container container">
+      <PageIntro class="page__intro" :slug="slug" :title="title" :document="document" />
+      <div class="page__services services">
         <div class="block">
           <div class="block__wrapper">
             <div class="block__base">

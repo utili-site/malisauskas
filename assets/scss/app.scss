@@ -1,35 +1,26 @@
-.block {
+.extrude {
   width: 50%;
   height: 25rem;
-  overflow: hidden;
-  * {
-    transition: all 0.5s linear;
-  }
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
   &__wrapper {
     padding: 5rem 0 0 5rem;
+    margin: -5rem 0 0 -5rem;
     position: relative;
   }
-  &__media {
+  &__content {
     border: solid 0.3rem #000;
     font-size: 0;
     position: relative;
     z-index: 4;
     height: 20rem;
   }
-  &__base {
+  &__cropper {
     overflow: hidden;
     position: relative;
     z-index: 2;
     width: 100%;
     height: 100%;
   }
-  &__rect {
+  &__base {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -53,14 +44,19 @@
       right: 0;
       bottom: 0;
       width: 100%;
-      height: .3rem;
+      height: 0.3rem;
       background-color: #000;
       z-index: 2;
       transform-origin: 100% 100%;
       transform: rotate(45deg);
     }
   }
-
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   &__line {
     position: absolute;
     width: 100%;
@@ -68,7 +64,7 @@
     background: blue;
 
     &--left {
-      border-bottom: 3px solid #000;
+      border-bottom: .3rem solid #000;
       transform-origin: 100% 100%;
       transform: rotate(45deg);
       right: 100%;
@@ -76,7 +72,7 @@
       z-index: 3;
     }
     &--top {
-      border-top: 3px solid #000;
+      border-top: .3rem solid #000;
       transform-origin: 100% 0;
       transform: rotate(45deg);
       right: 0;
@@ -85,14 +81,14 @@
     }
   }
   &:hover {
-    .block {
+    .extrude {
       &__wrapper {
         padding: 0;
       }
-      &__base {
+      &__cropper {
         padding: 0 5rem 5rem 0;
       }
-      &__rect {
+      &__base {
         width: calc(100% - 5rem);
       }
     }

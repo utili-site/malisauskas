@@ -3,28 +3,32 @@
     <div class="page__container container">
       <PageIntro class="page__intro" :slug="slug" :title="title" :document="document" />
       <div class="page__services services">
-        <div class="block">
-          <div class="block__wrapper">
-            <div class="block__base">
-              <div class="block__media">
-                <img src="/images/uploads/passport-thumb.png" alt="" class="block__image" />
-              </div>
-              <div class="block__rect">
-                <i class="block__line block__line--left"></i>
-                <i class="block__line block__line--top"></i>
+        <div class="services__steps">
+          <div class="services__step step" v-for="{ title, body } in steps" :key="title">
+            <div class="step__top">
+              <div class="step__title" v-text="title" />
+            </div>
+            <div class="step__text" v-text="body" />
+          </div>
+        </div>
+        <div class="services__extrudes">
+          <div class="services__extrude extrude" v-for="{ title, body, background } in blocks" :key="title">
+            <div class="extrude__wrapper">
+              <div class="extrude__cropper">
+                <div class="extrude__content">
+                  <div class="extrude__title" v-text="title" />
+                  <div class="extrude__text" v-text="body" />
+                  <img :src="background" :alt="title" class="extrude__image" />
+                </div>
+                <div class="extrude__base">
+                  <i class="extrude__line extrude__line--left"></i>
+                  <i class="extrude__line extrude__line--top"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="services__grid">
-        <div class="services__block" v-for="{ logo, title, body, url } in services" :key="title">
-          <div class="services__logo" v-if="logo">
-            <img :src="logo" :alt="title" class="services__image" />
-            <a :href="url" class="services__link"></a>
-          </div>
-          <div class="services__text" v-if="body">{{ body }}</div>
-        </div>
+        <div class="extrude"></div>
       </div>
     </div>
   </div>
@@ -39,14 +43,15 @@ export default {
   },
   async asyncData({ $content, store }) {
     const document = await $content("services").fetch();
-    const { slug, title, blocks } = document;
+    const { cta, years, experience, steps, blocks, slug, title } = document;
+    console.log(steps);
 
     store.commit("setBlobColors", {
       leftBlobColor: document.leftBlobColor,
       rightBlobColor: document.rightBlobColor,
     });
 
-    return { slug, title, document, services: document.items };
+    return { cta, years, experience, steps, blocks, slug, title, document };
   },
 };
 </script>

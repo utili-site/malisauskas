@@ -31,7 +31,7 @@ blocks:
     body: You know it, and we know it too. Sometimes, projects look good in design
       previews but it gets lost in the development process. That's why we like
       to develop our designs ourselves and promise a pixel-perfect outcome.
-    background: /images/uploads/service-block-2.png
+    background: /images/uploads/service-block-3.png
 title: What we do. And how.
 leftBlobColor: "#b29e85"
 years: "8"

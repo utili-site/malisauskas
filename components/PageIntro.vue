@@ -31,6 +31,17 @@ export default {
     letter-spacing: 0.7rem;
     text-transform: uppercase;
     padding: 1.8rem;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 2.2rem;
+			left: 0;
+			width: .7rem;
+			height: .7rem;
+			border-bottom: .2rem solid currentColor;
+			border-left: .2rem solid currentColor;
+		}
   }
 }
 </style>

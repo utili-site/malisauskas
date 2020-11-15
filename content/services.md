@@ -2,6 +2,7 @@
 title: What we do. And how.
 leftBlobColor: "#b29e85"
 rightBlobColor: "#ff982f"
+servicesBlobColor: "#fbff00"
 years: "8"
 experience: years of experience
 steps:

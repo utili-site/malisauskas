@@ -1,21 +1,23 @@
 <template>
   <div class="page page--services">
     <div class="page__container container">
-      <PageIntro class="page__intro" :slug="slug" :title="title" :document="document" />
-      <div class="page__services services">
-        <div class="services__steps">
-          <div class="services__step step" v-for="{ title, body } in steps" :key="title">
-            <div class="step__top">
-              <div class="step__title" v-text="title" />
-              <div class="step__spreader">
-                <IconArrow :class="['step__arrow', `step__arrow--${'active'}`]" width="100%" />
+      <PageIntro class="page__intro" :document="document" />
+      <div class="page__process process">
+        <div class="process__steps">
+          <div class="process__step step" v-for="{ title, body } in steps" :key="title">
+            <div class="process__top">
+              <div class="process__title" v-text="title" />
+              <div class="process__spreader">
+                <IconArrow :class="['process__arrow', `process__arrow--${'active'}`]" width="100%" />
               </div>
             </div>
-            <div class="step__text" v-text="body" />
+            <div class="process__text" v-text="body" />
           </div>
         </div>
-        <div class="services__extrudes">
-          <div class="services__extrude extrude" v-for="{ title, body, background } in blocks" :key="title">
+      </div>
+      <div class="page__services services">
+        <div class="services__grid">
+          <div class="services__block extrude" v-for="{ title, body, background } in blocks" :key="title">
             <div class="extrude__wrapper">
               <div class="extrude__cropper">
                 <div class="extrude__content">
@@ -30,31 +32,42 @@
               </div>
             </div>
           </div>
+          <div class="services__block">
+            <div class="services__info">
+              <h2 v-text="subtitle" />
+              <AppBtn class="services__btn" type="button" :label="cta" :style="{ color: servicesBlobColor }" />
+            </div>
+          </div>
         </div>
+        <AppBlob class="services__blob" :style="{ backgroundColor: servicesBlobColor }" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AppBlob from "@/components/AppBlob";
+import AppBtn from "@/components/AppBtn";
 import PageIntro from "@/components/PageIntro";
 import IconArrow from "@/components/icons/IconArrow";
 
 export default {
   components: {
+    AppBlob,
+    AppBtn,
     PageIntro,
     IconArrow,
   },
   async asyncData({ $content, store }) {
     const document = await $content("services").fetch();
-    const { cta, years, experience, steps, blocks, slug, title } = document;
+    const { cta, years, experience, steps, blocks, slug, title, servicesBlobColor, subtitle } = document;
 
     store.commit("setBlobColors", {
       leftBlobColor: document.leftBlobColor,
       rightBlobColor: document.rightBlobColor,
     });
 
-    return { cta, years, experience, steps, blocks, slug, title, document };
+    return { cta, years, experience, steps, blocks, slug, title, servicesBlobColor, subtitle, document };
   },
 };
 </script>
@@ -62,7 +75,34 @@ export default {
 <style lang="scss">
 $depth: 4.6rem;
 $border: 0.3rem;
+
 .services {
+  position: relative;
+  &__grid {
+    display: grid;
+    grid-gap: 2.6rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 15.7rem 0 5rem;
+    position: relative;
+    z-index: 2;
+  }
+  &__blob {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    z-index: 1;
+    width: 50vmax;
+    height: 50vmax;
+  }
+  &__info {
+		padding: 1.6rem 1rem 1rem 5.1rem;
+  }
+  &__btn {
+    margin: 2.8rem 0;
+  }
+}
+
+.process {
   &__steps {
     display: grid;
     grid-gap: 3rem 2rem;
@@ -70,14 +110,6 @@ $border: 0.3rem;
     padding: 5.2rem 0;
     margin-right: -3rem;
   }
-  &__extrudes {
-    display: grid;
-    grid-gap: 2.6rem;
-    grid-template-columns: 1fr 1fr;
-    padding: 15.7rem 0 12.8rem;
-  }
-}
-.step {
   &__top {
     display: flex;
     align-items: center;
@@ -99,13 +131,10 @@ $border: 0.3rem;
 }
 
 .extrude {
-  // margin: 0 -($depth) 0 0;
   margin-right: (-$depth);
   margin-top: (-$depth);
-    // margin: (-$depth) 0 0 (-$depth);
   &__wrapper {
     padding: $depth 0 0 $depth;
-    // margin: (-$depth) 0 0 (-$depth);
     // margin: (-$depth) 0 0 (-$depth);
     position: relative;
   }
@@ -165,6 +194,8 @@ $border: 0.3rem;
     height: 85.6%;
     object-position: 100% 100%;
     object-fit: contain;
+    z-index: -1;
+    pointer-events: none;
   }
   &__line {
     position: absolute;

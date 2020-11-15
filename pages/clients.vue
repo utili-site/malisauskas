@@ -1,7 +1,7 @@
 <template>
   <div class="page page--clients">
     <div class="page__container container">
-      <PageIntro class="page__intro" :slug="slug" :title="title" :document="document" />
+      <PageIntro class="page__intro" :document="document" />
       <div class="page__clients clients">
         <div class="clients__grid">
           <div class="clients__block" v-for="{ logo, title, body, url } in clients" :key="title">

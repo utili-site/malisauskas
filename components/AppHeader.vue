@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import AppLogo from "@/components/AppLogo";
 import AppBtn from "@/components/AppBtn";
+import AppLogo from "@/components/AppLogo";
 import IconEmail from "@/components/icons/IconEmail";
 import IconPhone from "@/components/icons/IconPhone";
 

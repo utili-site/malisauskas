@@ -2,8 +2,8 @@
   <div class="app" :style="pageStyle">
     <div class="app__view">
       <AppHeader class="app__header" :header="header" />
-      <AppBlob class="app__blob" type="left" :style="$store.getters.leftBlobStyle" />
-      <AppBlob class="app__blob" type="right" :style="$store.getters.rightBlobStyle" />
+      <AppBlob class="app__blob app__blob--left" :style="$store.getters.leftBlobStyle" />
+      <AppBlob class="app__blob app__blob--right" :style="$store.getters.rightBlobStyle" />
       <Nuxt class="app__page" keep-alive />
     </div>
     <AppFooter class="app__footer" ref="footer" :footer="footer" />
@@ -78,6 +78,14 @@ export default {
     position: absolute;
     // position: fixed;
     z-index: 1;
+    &--left {
+      top: -50vmax;
+      left: -20vmax;
+    }
+    &--right {
+      top: -25vmax;
+      right: -15vmax;
+    }
   }
 }
 </style>

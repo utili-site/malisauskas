@@ -1,7 +1,7 @@
 <template>
   <div class="page page--portfolio">
     <div class="page__container container">
-      <PageIntro class="page__intro" :slug="slug" :title="title" :document="document" />
+      <PageIntro class="page__intro" document="document" />
       <div class="page__portfolio portfolio">
         <div class="portfolio__grid">
           <div class="portfolio__block" v-for="({ thumbnail, title, ...work }, index) in portfolio" :key="work.slug">

@@ -72,6 +72,8 @@ collections:
                 { label: Body, name: body, minimal: true, widget: markdown },
                 { label: "Left Color", name: leftBlobColor, widget: color },
                 { label: "Right Color", name: rightBlobColor, widget: color },
+                { label: "Left Color", name: leftBlobColor, widget: color },
+                { label: "Services Color", name: servicesBlobColor, widget: color },
                 { label: Years, name: years, widget: string },
                 { label: Experience, name: experience, widget: string },
                 {

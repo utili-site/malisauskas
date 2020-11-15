@@ -1,7 +1,7 @@
 <template>
   <div class="app" :style="pageStyle">
     <div class="app__view">
-      <AppHeader class="app__header" :header="header" some="prop" />
+      <AppHeader class="app__header" :header="header" />
       <div class="app__blob app__blob--left" :style="$store.getters.leftBlobStyle" />
       <div class="app__blob app__blob--right" :style="$store.getters.rightBlobStyle" />
       <Nuxt class="app__page" keep-alive />
@@ -32,8 +32,6 @@ export default {
     footer: {},
     misc: {},
     footerHeight: 0,
-    leftBlobColor: null,
-    rightBlobColor: null,
   }),
   mounted() {
     this.footerHeight = this.$refs.footer.$el.clientHeight;
@@ -61,6 +59,7 @@ export default {
     background-color: #fff;
     position: relative;
     z-index: 2;
+    overflow: hidden;
   }
   &__page {
     position: relative;
@@ -81,8 +80,9 @@ export default {
     height: 75vw;
     border-radius: 50%;
     filter: blur(150px);
+    pointer-events: none;
     will-change: background-color;
-    transition: background-color .8s linear;
+    transition: background-color 0.8s linear;
     &--left {
       top: -50vw;
       left: -20vw;

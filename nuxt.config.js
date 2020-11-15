@@ -40,6 +40,8 @@ export default {
     '@nuxt/content',
     // https://image.nuxtjs.org/
     '@nuxt/image',
+    // https://github.com/silvandiepen/nuxt-favicons
+   'nuxt-rfg-icon',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

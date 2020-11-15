@@ -38,4 +38,4 @@ years: "8"
 subtitle: Could use some help?
 cta: Let's talk
 ---
-featured: /images/uploads/bp_featured.png
+We create user-focused experiences that result in happier customers and higher conversion rate.

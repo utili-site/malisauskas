@@ -2,8 +2,10 @@
   <div class="app" :style="pageStyle">
     <div class="app__view">
       <AppHeader class="app__header" :header="header" />
-      <AppBlob class="app__blob app__blob--left" :style="$store.getters.leftBlobStyle" />
-      <AppBlob class="app__blob app__blob--right" :style="$store.getters.rightBlobStyle" />
+      <AppBlob class="app__blob app__blob--left" id="leftBlob" />
+      <AppBlob class="app__blob app__blob--right" id="rightBlob" />
+      <!-- <AppBlob class="app__blob app__blob--left" id="leftBlob" :style="$store.getters.leftBlobStyle" /> -->
+      <!-- <AppBlob class="app__blob app__blob--right" id="rightBlob" :style="$store.getters.rightBlobStyle" /> -->
       <Nuxt class="app__page" keep-alive />
     </div>
     <AppFooter class="app__footer" ref="footer" :footer="footer" />
@@ -37,6 +39,7 @@ export default {
   }),
   mounted() {
     this.footerHeight = this.$refs.footer.$el.clientHeight;
+    this.$store.dispatch('initBlobs')
   },
   async fetch() {
     this.header = await this.$content("ui", "header").fetch();
@@ -76,6 +79,7 @@ export default {
   }
   &__blob {
     position: absolute;
+    transform: translate3d(0,0,0);
     // position: fixed;
     z-index: 1;
     &--left {

@@ -20,9 +20,9 @@ export default {
     const document = await $content("portfolio").fetch();
     const { slug, title, blocks } = document;
 
-    store.commit("setBlobColors", {
-      leftBlobColor: document.leftBlobColor,
-      rightBlobColor: document.rightBlobColor,
+    store.dispatch("updateBlobColorsHex", {
+      leftBlobColorHex: document.leftBlobColor,
+      rightBlobColorHex: document.rightBlobColor,
     });
 
     const works = await $content("works").fetch();

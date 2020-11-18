@@ -35,9 +35,9 @@ export default {
     const document = await $content("services").fetch();
     const { cta, years, experience, steps, blocks, slug, title, servicesBlobColor, subtitle } = document;
 
-    store.commit("setBlobColors", {
-      leftBlobColor: document.leftBlobColor,
-      rightBlobColor: document.rightBlobColor,
+    store.dispatch("updateBlobColorsHex", {
+      leftBlobColorHex: document.leftBlobColor,
+      rightBlobColorHex: document.rightBlobColor,
     });
 
     return { cta, years, experience, steps, blocks, slug, title, servicesBlobColor, subtitle, document };

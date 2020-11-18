@@ -5,8 +5,7 @@
 <script>
 import IconArrow from "@/components/icons/IconArrow";
 
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -14,9 +13,9 @@ export default {
   width: 75vmax;
   height: 75vmax;
   border-radius: 50%;
-  filter: blur(150px);
+  filter: blur(100px);
   pointer-events: none;
-  will-change: background-color;
-  transition: background-color 0.8s linear;
+  // will-change: background-color;
+  // transition: background-color 0.8s linear;
 }
 </style>

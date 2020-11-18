@@ -1,6 +1,8 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+  ssr: true, // default value
+  // ssr: false,
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -41,7 +43,7 @@ export default {
     // https://image.nuxtjs.org/
     '@nuxt/image',
     // https://cloudinary.nuxtjs.org
-    '@nuxtjs/cloudinary',
+    // '@nuxtjs/cloudinary',
     // https://github.com/silvandiepen/nuxt-favicons
    'nuxt-rfg-icon',
   ],

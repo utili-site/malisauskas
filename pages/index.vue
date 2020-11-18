@@ -56,10 +56,9 @@ export default {
 
     portfolio.works = portfolio.blocks.map((block) => works.find(({ title }) => title === block));
 
-
-    store.commit("setBlobColors", {
-      leftBlobColor: home.leftBlobColor,
-      rightBlobColor: home.rightBlobColor,
+    store.dispatch("updateBlobColorsHex", {
+      leftBlobColorHex: home.leftBlobColor,
+      rightBlobColorHex: home.rightBlobColor,
     });
 
     return { home, clients, services, portfolio };

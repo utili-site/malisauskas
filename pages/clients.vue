@@ -19,9 +19,9 @@ export default {
     const document = await $content("clients").fetch();
     const { blocks } = document;
 
-    store.commit("setBlobColors", {
-      leftBlobColor: document.leftBlobColor,
-      rightBlobColor: document.rightBlobColor,
+    store.dispatch("updateBlobColorsHex", {
+      leftBlobColorHex: document.leftBlobColor,
+      rightBlobColorHex: document.rightBlobColor,
     });
 
     return { document, clients: document.items };

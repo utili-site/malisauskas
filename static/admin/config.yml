@@ -34,15 +34,15 @@ collections:
                 { label: "Hero Suffix", name: hero_suffix, widget: string },
                 { label: "Hero Clients Intro", name: hero_clients_intro, widget: text  },
                 { label: "Services Title", name: flow_title, widget: string },
-                { label: "Services Intro", name: flow_intro, widget: string },
+                { label: "Services Intro", name: flow_intro, widget: markdown },
                 { label: "Services Year Label", name: flow_year_label, widget: string },
                 { label: "Services Year Value", name: flow_year_value, widget: string },
                 { label: "Services CTA", name: flow_cta, widget: string },
                 { label: "Portfolio Title", name: showcase_title, widget: string },
-                { label: "Portfolio Intro", name: showcase_intro, widget: string },
+                { label: "Portfolio Intro", name: showcase_intro, widget: markdown },
                 {
                   label: "Portfolio Blocks",
-                  name: blocks,
+                  name: showcase_blocks,
                   widget: list,
                   summary: "{{block}}",
                   field:

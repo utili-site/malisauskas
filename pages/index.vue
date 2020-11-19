@@ -9,7 +9,7 @@
           <span class="hero__suffix" v-text="home.hero_suffix" />
         </h1>
         <div class="hero__bottom">
-          <div class="hero__label" v-text="'missing translation'" />
+          <div class="hero__label" v-text="home.hero_clients_intro" />
           <div class="hero__scroller">
             <div class="hero__clients">
               <div class="hero__client" v-for="{ logo, body } in clients.items" :key="body">
@@ -22,24 +22,37 @@
     </section>
     <section class="page__flow flow" v-if="services.steps">
       <div class="flow__container container">
-        {{home}}
         <div class="flow__top">
-          <div class="flow__slogan" v-text="'hi'" />
-          <h2 class="flow__title" v-text="'hi'" />
-
+          <div class="flow__slogan" v-text="services.slug" />
+          <h2 class="flow__title" v-text="home.flow_title" />
+          <div class="flow__intro" v-text="home.flow_intro" />
         </div>
-        <div class="flow__container container">
-          <PageProcess class="flow__process" :steps="services.steps" />
-        </div>
+        <PageProcess class="flow__process" :steps="services.steps" />
+        <AppBtn type="NuxtLink" modifier="white" :action="services.slug" :label="home.flow_cta" />
       </div>
     </section>
-    <section class="page__showcase showcase" v-if="portfolio">
+    <section class="page__showcase showcase" v-if="home.showcase_blocks">
       <div class="showcase__container container">
-        <PagePortfolio class="showcase__portfolio" :portfolio="portfolio.works" :slug="portfolio.slug" />
+        <PagePortfolio class="showcase__portfolio" :blocks="home.showcase_blocks" :slug="portfolio.slug" />
       </div>
     </section>
     <section class="page__feedback feedback">
-      <div class="feedback__slider"></div>
+      <div class="feedback__container container">
+        <div class="feedback__swiper">
+          <div class="feedback__swiper-wrapper">
+            <div class="feedback__slide" v-for="{ text, name, position } in home.feedback" :key="text">
+              <div class="feedback__quote" v-text="text"></div>
+              <div class="feedback__meta">
+                <span class="feedback__name" v-text="name" />
+                <template v-if="position">
+                  <span class="feedback__dot" v-text="'  •  '" />
+                  <span class="feedback__position" v-text="position" />
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </template>
@@ -58,11 +71,8 @@ export default {
   async asyncData({ $content, store }) {
     const home = await $content("home").fetch();
     const services = await $content("services").fetch();
-    const works = await $content("works").fetch();
-    const portfolio = await $content("portfolio").fetch();
     const clients = await $content("clients").fetch();
-
-    portfolio.works = portfolio.blocks.map((block) => works.find(({ title }) => title === block));
+    const portfolio = await $content("portfolio").fetch();
 
     store.dispatch("updateBlobColorsHex", {
       leftBlobColorHex: home.leftBlobColor,

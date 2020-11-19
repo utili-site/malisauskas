@@ -2,7 +2,7 @@
   <div class="portfolio">
     <div class="portfolio__container">
       <div class="portfolio__grid">
-        <template v-for="({ ...work }, index) in portfolio">
+        <template v-for="({ ...work }, index) in items">
           <div class="portfolio__block" :key="work.slug">
             <div class="portfolio__work">
               <NuxtLink class="portfolio__media" :to="`${slug}/${work.slug}`">
@@ -43,7 +43,7 @@ import PageIntro from "@/components/PageIntro";
 
 export default {
   props: {
-    portfolio: {
+    blocks: {
       type: Array,
       required: true,
     },
@@ -55,6 +55,18 @@ export default {
   components: {
     AppBlob,
     AppBtn,
+  },
+  data() {
+    return {
+      items: [],
+    };
+  },
+  async fetch() {
+    const works = await this.$content("works").fetch();
+    this.items = this.blocks.map((block) => works.find(({ title }) => title === block));
+  },
+  computed: {
+    // items: ({ blocks }) => blocks.map((block) => works.find(({ title }) => title === block)),
   },
 };
 </script>

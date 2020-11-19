@@ -64,20 +64,10 @@ export default {
     transition: color 160ms var(--e), transform 160ms var(--e);
   }
 
-  //   @include hover {
-  //     text-decoration: none;
-  //     background-color: #f3c007;
-  //     border-color: #f3c007;
-  //   }
-
   &--white {
     background-color: #fff;
     border-color: #fff;
-
-    // @include hover {
-    //   background-color: #efefef;
-    //   border-color: #efefef;
-    // }
+    color: #000;
   }
 }
 </style>

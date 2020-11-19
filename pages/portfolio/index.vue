@@ -2,7 +2,7 @@
   <div class="page page--portfolio">
     <div class="page__container container">
       <PageIntro class="page__intro" :document="document" />
-      <PagePortfolio class="page__portfolio" :portfolio="portfolio" :slug="slug" />
+      <PagePortfolio class="page__portfolio" :blocks="blocks" :slug="slug" />
     </div>
   </div>
 </template>
@@ -25,10 +25,7 @@ export default {
       rightBlobColorHex: document.rightBlobColor,
     });
 
-    const works = await $content("works").fetch();
-    const portfolio = blocks.map((block) => works.find(({ title }) => title === block));
-
-    return { slug, title, portfolio, document };
+    return { slug, title, blocks, document };
   },
 };
 </script>

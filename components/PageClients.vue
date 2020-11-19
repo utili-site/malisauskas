@@ -1,10 +1,8 @@
 <template>
   <div class="clients">
     <div class="clients__grid">
-      <div class="clients__block" v-for="{ logo, title, body, url } in clients" :key="title">
-        <a :href="url" class="clients__logo" target="_blank" v-if="logo">
-          <img :src="logo" :alt="title" class="clients__image" />
-        </a>
+      <div class="clients__block" v-for="{ logo, body } in clients" :key="body">
+        <img :src="logo" :alt="body" class="clients__logo" />
         <div class="clients__text" v-if="body">{{ body }}</div>
       </div>
     </div>
@@ -38,8 +36,6 @@ export default {
   &__logo {
     position: relative;
     display: inline-block;
-  }
-  &__image {
     width: 19rem;
     height: 3rem;
     object-fit: contain;

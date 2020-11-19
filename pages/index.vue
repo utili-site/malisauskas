@@ -10,11 +10,11 @@
         </h1>
         <div class="hero__bottom">
           <div class="hero__label" v-text="'missing translation'" />
-          <div class="hero__clients">
-            <div class="hero__client" v-for="{ logo, title, url } in clients.items" :key="title">
-              <a :href="url" class="hero__client-link" target="_blank">
-                <img :src="logo" class="hero__client-logo" :alt="title" />
-              </a>
+          <div class="hero__scroller">
+            <div class="hero__clients">
+              <div class="hero__client" v-for="{ logo, body } in clients.items" :key="body">
+                <img :src="logo" :alt="body" class="hero__logo" />
+              </div>
             </div>
           </div>
         </div>
@@ -25,9 +25,9 @@
         <PageProcess class="flow__process" :steps="services.steps" />
       </div>
     </section>
-    <section class="page__showcase page__showcase" v-if="portfolio">
-      <div class="page__showcase__container container">
-        <PagePortfolio class="flow__process" :portfolio="portfolio.works" :slug="portfolio.slug" />
+    <section class="page__showcase showcase" v-if="portfolio">
+      <div class="showcase__container container">
+        <PagePortfolio class="showcase__portfolio" :portfolio="portfolio.works" :slug="portfolio.slug" />
       </div>
     </section>
     <section class="page__feedback feedback">

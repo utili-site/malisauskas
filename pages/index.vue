@@ -22,7 +22,15 @@
     </section>
     <section class="page__flow flow" v-if="services.steps">
       <div class="flow__container container">
-        <PageProcess class="flow__process" :steps="services.steps" />
+        {{home}}
+        <div class="flow__top">
+          <div class="flow__slogan" v-text="'hi'" />
+          <h2 class="flow__title" v-text="'hi'" />
+
+        </div>
+        <div class="flow__container container">
+          <PageProcess class="flow__process" :steps="services.steps" />
+        </div>
       </div>
     </section>
     <section class="page__showcase showcase" v-if="portfolio">

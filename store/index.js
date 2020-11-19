@@ -24,7 +24,7 @@ const getRandomDuration = () => gsap.utils.random(3, 6);
 const getHsl = ({ h, s, l }) => `hsl(${h},${s}%,${l}%)`;
 
 const createTimeline = (id, hex) => {
-  if (!isClient) return;
+  if (!isClient || !hex) return;
 
   const { h, s, l } = hexToHsl(hex);
   const el = document.getElementById(id);
@@ -74,8 +74,8 @@ export const state = () => ({
 export const getters = {
   leftBlobStyle: (state) => ({ backgroundColor: state.leftBlobColorHex ?? "transparent" }),
   rightBlobStyle: (state) => ({ backgroundColor: state.rightBlobColorHex ?? "transparent" }),
-  leftBlobHsl: (state) => hexToHsl(state.leftBlobColorHex),
-  rightBlobHsl: (state) => hexToHsl(state.rightBlobColorHex),
+  // leftBlobHsl: (state) => hexToHsl(state.leftBlobColorHex),
+  // rightBlobHsl: (state) => hexToHsl(state.rightBlobColorHex),
   talkBtnColor: (state) => ({ color: state.rightBlobColorHex }),
 };
 

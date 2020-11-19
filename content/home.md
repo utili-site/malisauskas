@@ -19,6 +19,12 @@ showcase_title: Our work speaks for itself
 showcase_intro: "Whether you're an established, corporate company, or just a guy
   starting out in business -- we've got you. Our clients include both: Series C
   startups and people who have never owned a website before."
+blocks:
+  - Baltic Petroleum
+  - Passport Journal
+  - Burga
+  - Poklet
+  - m.Parking
 showcase_all: See all work »
 feedback:
   - text: Mališauskas was an absolute pleasure to work with. Definitely sticks to
